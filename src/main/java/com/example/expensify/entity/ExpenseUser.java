@@ -1,6 +1,7 @@
 package com.example.expensify.entity;
 
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.MappedSuperclass;
 import org.springframework.security.core.GrantedAuthority;
@@ -37,7 +38,7 @@ public class ExpenseUser  implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return Collections.singleton(new SimpleGrantedAuthority(role.toString));
+        return Collections.singleton(new SimpleGrantedAuthority(role.toString()));
     }
 
     @Override
